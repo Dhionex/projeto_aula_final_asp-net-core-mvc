@@ -15,6 +15,14 @@ namespace ProjetoFinalSalesWebMvc.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Sales Web MVC App From c# Course";
+            ViewData["MeuEmail"] = "dhionefarias@hotmail.com";
+
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
