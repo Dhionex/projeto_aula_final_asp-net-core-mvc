@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using ProjetoFinalSalesWebMvc.Models;
+using ProjetoFinalSalesWebMvc.Models;  
 
 namespace ProjetoFinalSalesWebMvc
 {
@@ -37,7 +37,7 @@ namespace ProjetoFinalSalesWebMvc
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ProjetoFinalSalesWebMvcContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ProjetoFinalSalesWebMvcContext")));
+                    options.UseMySql(Configuration.GetConnectionString("ProjetoFinalSalesWebMvcContext"), builder => builder.MigrationsAssembly("ProjetoFinalSalesWebMvc")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
